@@ -8,14 +8,14 @@ import io.bloco.faker.FakerData;
  * on 05/03/17 - 14:18
  */
 
-public class Yoda extends FakerComponent {
+public class Cat extends FakerComponent {
 
-    public Yoda(FakerData data) {
+    public Cat(FakerData data) {
         super(data);
     }
 
-    public String quote() {
-        return fetch("yoda.quotes");
+    public String name() {
+        return fetch("cat.name");
     }
 
 }

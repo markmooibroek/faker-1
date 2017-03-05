@@ -12,6 +12,7 @@ import io.bloco.faker.components.Avatar;
 import io.bloco.faker.components.Book;
 import io.bloco.faker.components.Bool;
 import io.bloco.faker.components.Business;
+import io.bloco.faker.components.Cat;
 import io.bloco.faker.components.Color;
 import io.bloco.faker.components.Commerce;
 import io.bloco.faker.components.Company;
@@ -26,6 +27,7 @@ import io.bloco.faker.components.SlackEmoji;
 import io.bloco.faker.components.Team;
 import io.bloco.faker.components.Time;
 import io.bloco.faker.components.University;
+import io.bloco.faker.components.Yoda;
 import io.bloco.faker.helpers.MapHelper;
 
 public class Faker {
@@ -38,6 +40,7 @@ public class Faker {
     public final Book book;
     public final Bool bool;
     public final Business business;
+    public final Cat cat;
     public final Color color;
     public final Commerce commerce;
     public final Company company;
@@ -52,6 +55,7 @@ public class Faker {
     public final Team team;
     public final Time time;
     public final University university;
+    public final Yoda yoda;
 
     private final String locale;
     private final FakerData data;
@@ -78,6 +82,7 @@ public class Faker {
         this.book = this.data.getComponent(Book.class);
         this.bool = this.data.getComponent(Bool.class);
         this.business = this.data.getComponent(Business.class);
+        this.cat= this.data.getComponent(Cat.class);
         this.color = this.data.getComponent(Color.class);
         this.commerce = this.data.getComponent(Commerce.class);
         this.company = this.data.getComponent(Company.class);
@@ -92,6 +97,7 @@ public class Faker {
         this.team = this.data.getComponent(Team.class);
         this.time = this.data.getComponent(Time.class);
         this.university = this.data.getComponent(University.class);
+        this.yoda = this.data.getComponent(Yoda.class);
     }
 
     public String getLocale() {
@@ -112,9 +118,11 @@ public class Faker {
                 .getResourceAsStream("locales/" + locale + ".yml");
 
         try {
-            assert input != null && input.available() != 0;
-        } catch (AssertionError|IOException e) {
-            throw new IllegalArgumentException("Unavailable locale \'" + locale + "\'");
+            if (input == null || input.available() == 0) {
+                throw new IllegalArgumentException("Unavailable locale \'" + locale + "\'");
+            }
+        } catch (IOException ignore) {
+
         }
 
         return input;

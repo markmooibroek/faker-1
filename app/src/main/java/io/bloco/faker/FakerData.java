@@ -9,6 +9,7 @@ import io.bloco.faker.components.Avatar;
 import io.bloco.faker.components.Book;
 import io.bloco.faker.components.Bool;
 import io.bloco.faker.components.Business;
+import io.bloco.faker.components.Cat;
 import io.bloco.faker.components.Color;
 import io.bloco.faker.components.Commerce;
 import io.bloco.faker.components.Company;
@@ -23,6 +24,7 @@ import io.bloco.faker.components.SlackEmoji;
 import io.bloco.faker.components.Team;
 import io.bloco.faker.components.Time;
 import io.bloco.faker.components.University;
+import io.bloco.faker.components.Yoda;
 import io.bloco.faker.helpers.StringHelper;
 
 public class FakerData {
@@ -42,6 +44,7 @@ public class FakerData {
                 new Book(this),
                 new Bool(this),
                 new Business(this),
+                new Cat(this),
                 new Color(this),
                 new Commerce(this),
                 new Company(this),
@@ -56,6 +59,7 @@ public class FakerData {
                 new Team(this),
                 new Time(this),
                 new University(this),
+                new Yoda(this),
         };
 
         this.components = new HashMap<>(componentsList.length);

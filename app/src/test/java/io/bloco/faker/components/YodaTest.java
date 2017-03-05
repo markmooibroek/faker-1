@@ -7,7 +7,7 @@ import io.bloco.faker.Faker;
 
 import static org.junit.Assert.assertNotNull;
 
-public class UniversityTest {
+public class YodaTest {
 
     private Faker faker;
 
@@ -17,17 +17,8 @@ public class UniversityTest {
     }
 
     @Test
-    public void name() throws Exception {
-        assertNotNull(faker.university.name());
+    public void quote() throws Exception {
+        assertNotNull(faker.yoda.quote());
     }
 
-    @Test
-    public void prefix() throws Exception {
-        assertNotNull(faker.university.prefix());
-    }
-
-    @Test
-    public void suffix() throws Exception {
-        assertNotNull(faker.university.suffix());
-    }
 }

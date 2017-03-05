@@ -1,6 +1,9 @@
 package io.bloco.faker;
 
 import org.junit.Test;
+import org.yaml.snakeyaml.error.YAMLException;
+
+import java.io.IOException;
 
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsEqual.equalTo;
